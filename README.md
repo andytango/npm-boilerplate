@@ -1,18 +1,19 @@
 # boilerplate
 
 A simple node library module boilerplate comprising:
+
 - Dotenv
 - Rollup
 - Babel
 - Jest
-- ESLint
+- Prettier
 - NPM, as opposed to Yarn
 
 Directory structure:
 
-- /src - *sources live here*
-- /test - *test files live here*
-- /tmp - *gitingored directory*
+- /src - _sources live here_
+- /test - _test files live here_
+- /tmp - _gitingored directory_
 
 ## License
 
