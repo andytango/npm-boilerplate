@@ -33,5 +33,9 @@
     "hooks": {
       "pre-commit": "pretty-quick --staged"
     }
+  },
+  "prettier": {
+    "trailingComma": "all",
+    "semi": false
   }
 }
