@@ -1,26 +1,21 @@
 import resolve from "rollup-plugin-node-resolve"
 import commonjs from "rollup-plugin-commonjs"
-import babel from "rollup-plugin-babel"
 import pkg from "./package.json"
+import typescript from "@rollup/plugin-typescript"
 
 export default [
   // browser-friendly UMD build
   {
-    input: "src/main.js",
+    input: "src/main.ts",
+    external: ["fs", "path", "dotenv"],
     output: {
       name: "main",
       file: pkg.browser,
       format: "umd",
+      globals: { dotenv: "dotenv" },
     },
-    plugins: [
-      resolve(),
-      commonjs(),
-      babel({
-        exclude: ["node_modules/**"],
-      }),
-    ],
+    plugins: [resolve(), commonjs(), typescript()],
   },
-
   // CommonJS (for Node) and ES module (for bundlers) build.
   // (We could have three entries in the configuration array
   // instead of two, but it's quicker to generate multiple
@@ -28,16 +23,12 @@ export default [
   // an array for the `output` option, where we can specify
   // `file` and `format` for each target)
   {
-    input: "src/main.js",
-    external: [],
+    input: "src/main.ts",
+    external: ["fs", "path", "dotenv"],
     output: [
       { file: pkg.main, format: "cjs" },
       { file: pkg.module, format: "es" },
     ],
-    plugins: [
-      babel({
-        exclude: ["node_modules/**"],
-      }),
-    ],
+    plugins: [typescript()],
   },
 ]
