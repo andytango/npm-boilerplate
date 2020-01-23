@@ -1,7 +1,7 @@
-import resolve from "rollup-plugin-node-resolve";
-import commonjs from "rollup-plugin-commonjs";
-import babel from "rollup-plugin-babel";
-import pkg from "./package.json";
+import resolve from "rollup-plugin-node-resolve"
+import commonjs from "rollup-plugin-commonjs"
+import babel from "rollup-plugin-babel"
+import pkg from "./package.json"
 
 export default [
   // browser-friendly UMD build
@@ -10,15 +10,15 @@ export default [
     output: {
       name: "main",
       file: pkg.browser,
-      format: "umd"
+      format: "umd",
     },
     plugins: [
       resolve(),
       commonjs(),
       babel({
-        exclude: ["node_modules/**"]
-      })
-    ]
+        exclude: ["node_modules/**"],
+      }),
+    ],
   },
 
   // CommonJS (for Node) and ES module (for bundlers) build.
@@ -32,12 +32,12 @@ export default [
     external: [],
     output: [
       { file: pkg.main, format: "cjs" },
-      { file: pkg.module, format: "es" }
+      { file: pkg.module, format: "es" },
     ],
     plugins: [
       babel({
-        exclude: ["node_modules/**"]
-      })
-    ]
-  }
-];
+        exclude: ["node_modules/**"],
+      }),
+    ],
+  },
+]

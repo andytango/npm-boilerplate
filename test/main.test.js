@@ -1,7 +1,7 @@
-import main from '../src/main'
+import main from "../src/main"
 
-describe('main', () => {
-  it('returns true', () => {
+describe("main", () => {
+  it("returns true", () => {
     expect(main()).toBeTruthy()
   })
 })
