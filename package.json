@@ -23,7 +23,7 @@
   "scripts": {
     "build": "npm run lint && npm test && rollup -c",
     "dev": "rollup -c -w",
-    "lint": "eslint --fix src test",
+    "lint": "prettier --write *.js src/**.js test/**.js",
     "test": "jest"
   },
   "files": [
