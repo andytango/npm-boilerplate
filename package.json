@@ -8,17 +8,17 @@
     "dotenv": "^8.2.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.2.2",
-    "@babel/preset-env": "^7.2.3",
+    "@babel/core": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "@rollup/plugin-commonjs": "^11.0.1",
+    "@rollup/plugin-node-resolve": "^7.0.0",
     "babel-jest": "^24.9.0",
-    "husky": "^4.2.0",
+    "husky": "^4.2.1",
     "jest": "^24.9.0",
     "prettier": "1.19.1",
     "pretty-quick": "^2.0.1",
-    "rollup": "^1.0.0",
-    "rollup-plugin-babel": "^4.2.0",
-    "rollup-plugin-commonjs": "^9.2.0",
-    "rollup-plugin-node-resolve": "^4.0.0"
+    "rollup": "^1.29.1",
+    "rollup-plugin-babel": "^4.3.3"
   },
   "scripts": {
     "build": "npm run lint && npm test && rollup -c",
